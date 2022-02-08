@@ -21,7 +21,6 @@ s = session.post(url, json={'query': query})
 
 with open('pycookie.txt', 'w') as f:
     json.dump(requests.utils.dict_from_cookiejar(session.cookies), f)
-print(s.cookies)
 
 query = """query {
   bos {
@@ -74,7 +73,6 @@ query = """query {
 
 headers = CaseInsensitiveDict()
 r = requests.post(url, json={'query': query}, cookies=s.cookies)
-print(r.status_code)
 print(r.text)
 
 json_data = json.loads(r.text)
