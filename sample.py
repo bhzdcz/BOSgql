@@ -1,3 +1,4 @@
+from http import cookies
 import requests
 import json
 import pandas as pd
@@ -17,7 +18,7 @@ query = """query {
 
 url = 'https://rickandmortyapi.com/graphql/'
 headers = CaseInsensitiveDict()
-r = requests.post(url, json={'query': query})
+r = requests.post(url, json={'query': query}, cookies=cookies.txt)
 print(r.status_code)
 print(r.text)
 
